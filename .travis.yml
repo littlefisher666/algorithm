@@ -3,5 +3,8 @@ language: java
 jdk:
   - openjdk8
 
+before_script:
+  - "mvn checkstyle:check --batch-mode --fail-never"
+
 script: 
   - "mvn clean install -U -Dmaven.test.skip=true"
